@@ -453,7 +453,7 @@ class Classificationstore extends Model\AbstractModel implements DirtyIndicatorI
      */
     public function setGroupCollectionMapping($groupId = null, $collectionId = null)
     {
-        if (!is_array($this->groupCollectionMapping) && $groupId) {
+        if (is_array($this->groupCollectionMapping) && $groupId) {
             $this->groupCollectionMapping[$groupId] = $collectionId;
         }
     }
